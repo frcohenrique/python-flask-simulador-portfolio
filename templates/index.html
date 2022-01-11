@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <title>Você Invest</title>
+</head>
+
+<body>
+
+
+    <header class="bg-primary">
+        <div class="container w-100">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <a class="navbar-brand" href="/">Você Investe</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="/">Início <span class="sr-only"></span></a>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="container w-100">
+        <div class="row">
+            <div class="col d-flex justify-content-center mt-5">
+                <form action='/' method="POST">
+                    <div class="form-group">
+                        <label class="mb-2">Quanto você tem para investir?</label><br>
+                        <input type="number" class="form-control border border-primary" name="input-qtd-investir"
+                            rows="3" placeholder="Informe o valor">
+                    </div>
+                    <label class="mt-5">Quais são os ativos do seu portfolio?</label><br>
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" name="input-nubr33">
+                        <label class="form-check-label" for="input-nubr33">NUBR33</label>
+                    </div>
+
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" name="input-mxrf11">
+                        <label class="form-check-label" for="input-mxrf11">MXRF11</label>
+                    </div>
+
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" name="input-hash11">
+                        <label class="form-check-label" for="input-hash11">HASH11</label>
+                    </div>
+
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" name="input-itub3">
+                        <label class="form-check-label" for="input-itub3">ITUB3</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-5">Calcular</button>
+
+                    <div class="mt-4">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    {%if resposta_nubr33%}
+                                    <td>NUBR33</td>
+                                    <td>R${{resposta_nubr33}}</td>
+                                    {%endif%}
+                                </tr>
+                                <tr>
+                                    {%if resposta_mxrf11%}
+                                    <td>MXRF11</td>
+                                    <td>R${{resposta_mxrf11}}</td>
+                                    {%endif%}
+                                </tr>
+                                <tr>
+                                    {%if resposta_hash11%}
+                                    <td>HASH11</td>
+                                    <td>R${{resposta_hash11}}</td>
+                                    {%endif%}
+                                </tr>
+                                <tr>
+                                    {%if resposta_itub3%}
+                                    <td>ITUB3</td>
+                                    <td>R${{resposta_itub3}}</td>
+                                    {%endif%}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
